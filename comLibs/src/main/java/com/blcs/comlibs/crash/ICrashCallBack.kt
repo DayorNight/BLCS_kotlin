@@ -1,8 +1,7 @@
-package com.blcs.comlibs.crash;
+package com.blcs.comlibs.crash
 
-import android.content.Context;
+import android.content.Context
 
-public interface ICrashCallBack {
-    void uncaughtException(Context ctx, Thread t,Throwable e);
-
+interface ICrashCallBack {
+    fun uncaughtException(ctx: Context?, t: Thread?, e: Throwable?)
 }

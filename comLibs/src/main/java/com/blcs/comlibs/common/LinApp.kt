@@ -35,7 +35,7 @@ import java.util.*
  * 9、获取进程号对应的进程名
  * 10、判断是否在主进程
  */
-object AppUtils {
+object LinApp {
     /**
      * 获取包名
      * @param context

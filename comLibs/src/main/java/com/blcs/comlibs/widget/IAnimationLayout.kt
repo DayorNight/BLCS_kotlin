@@ -1,6 +1,4 @@
-package com.blcs.comlibs.widget;
-
-import java.util.List;
+package com.blcs.comlibs.widget
 
 /**
  * @ClassName: IAnimationLayout
@@ -8,31 +6,30 @@ import java.util.List;
  * @CreateDate: 2020/12/24 10:57
  * @Description:
  */
-public interface IAnimationLayout {
-
+interface IAnimationLayout {
     /**
      * 添加 资源文件
      *
      * @param resId resId
      */
-    void addLikeImage(int resId);
+    fun addLikeImage(resId: Int)
 
     /**
      * 添加 资源文件组
      *
      * @param resIds resIds
      */
-    void addLikeImages(Integer... resIds);
+    fun addLikeImages(vararg resIds: Int?)
 
     /**
      * 添加 资源文件列表
      *
      * @param resIds resIds
      */
-    void addLikeImages(List<Integer> resIds);
+    fun addLikeImages(resIds: List<Int?>?)
 
     /**
      * 添加 发送
      */
-    void addFavor();
+    fun addFavor()
 }

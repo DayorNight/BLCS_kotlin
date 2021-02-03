@@ -1,73 +1,69 @@
-package com.blcs.comlibs.common;
+package com.blcs.comlibs.common
 
-import android.util.Log;
+import android.util.Log
+import com.blcs.comlibs.BuildConfig
 
-import com.blcs.comlibs.BuildConfig;
+object Lg {
+    private const val TAG = "V6.38========"
+    /*类名*/
+    private var className : String? = null
 
+    /*方法名*/
+    private var methodName : String? = null
 
-public class Lg {
-    static String className;//类名
-    static String methodName;//方法名
-    static int lineNumber;//行数
-    public static final String TAG = "V6.38========";
+    /*行数*/
+    private var lineNumber = 0
+
     /**
      * 判断是否可以调试
-     * @return
      */
-    public static boolean isDebuggable() {
-        return BuildConfig.DEBUG;
-    }
+    private val isDebuggable = BuildConfig.DEBUG
 
-    private static String createLog(String log ) {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append(TAG).append(methodName);
-        buffer.append("(").append(className).append(":").append(lineNumber).append(")==:");
-        buffer.append(log);
-        return buffer.toString();
+    private fun createLog(log: String): String {
+        val buffer = StringBuffer()
+        buffer.append(TAG).append(methodName)
+        buffer.append("(").append(className).append(":").append(lineNumber).append(")==:")
+        buffer.append(log)
+        return buffer.toString()
     }
 
     /**
      * 获取文件名、方法名、所在行数
      * @param sElements
      */
-    private static void getMethodNames(StackTraceElement[] sElements){
-        className = sElements[1].getFileName();
-        methodName = sElements[1].getMethodName();
-        lineNumber = sElements[1].getLineNumber();
+    private fun getMethodNames(sElements: Array<StackTraceElement>) {
+        className = sElements[1].fileName
+        methodName = sElements[1].methodName
+        lineNumber = sElements[1].lineNumber
     }
 
-    public static void e(String message){
-        if (!isDebuggable())
-            return;
-        getMethodNames(new Throwable().getStackTrace());
-        Log.e(className, createLog(message));
+    fun e(message: String) {
+        if (!isDebuggable) return
+        getMethodNames(Throwable().stackTrace)
+        Log.e(className, createLog(message))
     }
 
-    public static void i(String message){
-        if (!isDebuggable())
-            return;
-        getMethodNames(new Throwable().getStackTrace());
-        Log.i(className, createLog(message));
+    fun i(message: String) {
+        if (!isDebuggable) return
+        getMethodNames(Throwable().stackTrace)
+        Log.i(className, createLog(message))
     }
 
-    public static void d(String message){
-        if (!isDebuggable())
-            return;
-        getMethodNames(new Throwable().getStackTrace());
-        Log.d(className, createLog(message));
+    fun d(message: String) {
+        if (!isDebuggable) return
+        getMethodNames(Throwable().stackTrace)
+        Log.d(className, createLog(message))
     }
 
-    public static void v(String message){
-        if (!isDebuggable())
-            return;
-        getMethodNames(new Throwable().getStackTrace());
-        Log.v(className, createLog(message));
+    fun v(message: String) {
+        if (!isDebuggable) return
+        getMethodNames(Throwable().stackTrace)
+        Log.v(className, createLog(message))
     }
 
-    public static void w(String message){
-        if (!isDebuggable())
-            return;
-        getMethodNames(new Throwable().getStackTrace());
-        Log.w(className, createLog(message));
+    fun w(message: String) {
+        if (!isDebuggable) return
+        getMethodNames(Throwable().stackTrace)
+        Log.w(className, createLog(message))
     }
 }

@@ -39,7 +39,7 @@
                 android:resource="@xml/file_paths" />
         </provider> <!-- 全局异常捕获 -->
         <provider
-            android:name=".common.BuglyFileProvider"
+            android:name=".other.BuglyFileProvider"
             android:authorities="${applicationId}.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true"

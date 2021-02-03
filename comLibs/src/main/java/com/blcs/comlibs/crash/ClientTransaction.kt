@@ -1,10 +1,8 @@
-package com.blcs.comlibs.crash;
+package com.blcs.comlibs.crash
 
-import android.os.IBinder;
+import android.os.IBinder
 
-public class ClientTransaction {
-
-    public IBinder getActivityToken() {
-        return null;
-    }
+class ClientTransaction {
+    val activityToken: IBinder?
+        get() = null
 }

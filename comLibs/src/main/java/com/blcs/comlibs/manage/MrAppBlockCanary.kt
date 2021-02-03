@@ -1,5 +1,7 @@
-package com.blcs.comlibs.common
+package com.blcs.comlibs.manage
 
+import com.blcs.comlibs.common.LinApp
+import com.blcs.comlibs.common.LinNetStatus
 import com.github.moduth.blockcanary.BlockCanaryContext
 import java.io.File
 
@@ -11,13 +13,13 @@ class MrAppBlockCanary : BlockCanaryContext() {
      * 设置限定符
      */
     override fun provideQualifier(): String? {
-        return AppUtils.getAppName(provideContext())+"V"+AppUtils.getVersionName(provideContext())
+        return LinApp.getAppName(provideContext()) +"V"+ LinApp.getVersionName(provideContext())
     }
     /**
      * 设置UID
      */
     override fun provideUid(): String {
-        return AppUtils.getAppUid(provideContext(),AppUtils.getAppPackageName(provideContext())).toString()
+        return LinApp.getAppUid(provideContext(), LinApp.getAppPackageName(provideContext())).toString()
     }
 
     /**

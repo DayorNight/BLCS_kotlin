@@ -6,6 +6,7 @@ import android.os.Process
 import com.blcs.comlibs.BuildConfig
 import com.blcs.comlibs.common.*
 import com.blcs.comlibs.crash.Cockroach
+import com.blcs.comlibs.manage.MrAppBlockCanary
 import com.blcs.comlibs.manage.MrBugly
 import com.github.moduth.blockcanary.BlockCanary
 import com.tencent.bugly.Bugly
@@ -43,12 +44,12 @@ open class BaseApp : Application() {
     }
 
     private fun initBugly() {
-        val processName = AppUtils.getProcessName(Process.myPid())
+        val processName = LinApp.getProcessName(Process.myPid())
         val strategy = CrashReport.UserStrategy(appContext)
-        strategy.isUploadProcess =( processName == null || processName == AppUtils.getAppPackageName(this))
-        strategy.appChannel =AppUtils.getChannel(this)  //设置渠道
-        strategy.appVersion=AppUtils.getVersionName(this)    //App的版本
-        strategy.appPackageName=AppUtils.getAppPackageName(this) //App的包名
+        strategy.isUploadProcess =( processName == null || processName == LinApp.getAppPackageName(this))
+        strategy.appChannel =LinApp.getChannel(this)  //设置渠道
+        strategy.appVersion=LinApp.getVersionName(this)    //App的版本
+        strategy.appPackageName=LinApp.getAppPackageName(this) //App的包名
         MrBugly.autoCheckUpgrade(false)
         MrBugly.autoDownloadOnWifi(true)
         MrBugly.initDelay(5000)
