@@ -1,0 +1,3 @@
+include ':app'
+include ':comLibs'
+rootProject.name = "BLCS-kotin"

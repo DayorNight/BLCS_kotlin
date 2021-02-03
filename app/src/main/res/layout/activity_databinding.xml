@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--对象引入-->
+        <import type="android.util.SparseArray"/>
+        <import type="java.util.Map"/>
+        <import type="java.util.List"/>
+        <!--对象引用-->
+        <variable
+            name="user"
+            type="com.blcs.kotlin.bean.User3" />
+<!--        <variable-->
+<!--            name="user1"-->
+<!--            type="com.blcs.kotlin.bean.User3" />-->
+        <!--集合-->
+        <variable name="list" type="List&lt;String&gt;"/>
+        <variable name="sparse" type="SparseArray&lt;String&gt;"/>
+        <variable name="map" type="Map&lt;String, String&gt;"/>
+        <variable name="index" type="int"/>
+        <variable name="key" type="String"/>
+        <!--
+            android:text="@{list[index]}"
+            android:text="@{sparse[index]}"
+            android:text="@{map[key]}"
+            android:text='@{map["firstName"]}'
+            android:text="@{map[`firstName`]}"
+            android:padding="@{large? @dimen/largePadding : @dimen/smallPadding}"
+            强制转换
+            android:text="@{((User)(user.connection)).lastName}"
+            引用静态方法
+            android:text="@{MyStringUtils.capitalize(user.lastName)}"
+            包含绑定
+            <include layout="@layout/name"  bind:user="@{user}"/>
+        -->
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin12"
+        tools:context=".activity.DatabindingActivity">
+        <TextView
+            android:id="@+id/tv_content1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_big1"
+            android:onClick="onClickView"
+            android:textColor="@color/black"
+            android:text="@{user.firstName}"/>
+
+        <TextView
+            android:id="@+id/tv_content2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_big1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content1"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin6"
+            android:text="@{user.firstName??user.lastName}"/>
+
+        <TextView
+            android:id="@+id/tv_content3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_big1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content2"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin6"
+            android:text="@{tvContent1.text}"/>
+        <TextView
+            android:id="@+id/tv_content4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_big1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content3"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin6"
+            android:text="@{user.firstName}"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
