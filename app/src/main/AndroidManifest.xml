@@ -6,10 +6,11 @@
         android:name=".BlcsApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app512"
+        android:roundIcon="@mipmap/ic_app512"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.BLCSkotin">
-        <activity android:name=".activity.DatabindingActivity"></activity>
+
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,15 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
     </application>
 
 </manifest>

@@ -13,17 +13,21 @@ import com.tencent.bugly.Bugly
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.mmkv.MMKV
 
-open class BaseApp : Application() {
-    companion object {
-        var appContext: Context? = null
-        fun getContext(): Context {
-            return appContext!!
-        }
-    }
-
+abstract class BaseApp : Application() {
+//    companion object {
+//        var appContext: Context? = null
+//        fun getContext(): Context {
+//            return appContext!!
+//        }
+//    }
+    abstract fun initSDK()
     override fun onCreate() {
         super.onCreate()
-        appContext = applicationContext
+//        appContext = applicationContext
+        /**
+         * 初始化第三方
+         */
+        initSDK()
         /**
          * 异常捕获上传
          */
@@ -45,7 +49,7 @@ open class BaseApp : Application() {
 
     private fun initBugly() {
         val processName = LinApp.getProcessName(Process.myPid())
-        val strategy = CrashReport.UserStrategy(appContext)
+        val strategy = CrashReport.UserStrategy(this)
         strategy.isUploadProcess =( processName == null || processName == LinApp.getAppPackageName(this))
         strategy.appChannel =LinApp.getChannel(this)  //设置渠道
         strategy.appVersion=LinApp.getVersionName(this)    //App的版本

@@ -3,6 +3,11 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     signingConfigs {
         release {
@@ -22,7 +27,6 @@ android {
         versionName As.versionName
         signingConfig signingConfigs.release
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -41,12 +45,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
 dependencies {
     implementation project(path: ':comLibs')
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+    if (!isModule){
+        implementation project(':mainModule')
+    }
 
 }

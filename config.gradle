@@ -1,4 +1,6 @@
 ext {
+    isModule = false
+    isModuleId = isModule? 'com.android.application':'com.android.library'
     As = [
             compileSdkVersion: 30,
             applicationId    : "com.blcs.kotlin",

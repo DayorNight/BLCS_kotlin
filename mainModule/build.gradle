@@ -1,0 +1,52 @@
+apply plugin: isModuleId
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+android {
+    compileSdkVersion As.compileSdkVersion
+    defaultConfig {
+        if (isModule) {
+            applicationId "com.blcs.mainmodule"
+        }
+        minSdkVersion As.minSdkVersion
+        targetSdkVersion As.targetSdkVersion
+        versionCode As.versionCode
+        versionName As.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        sourceSets {
+            main {
+                if (isModule) {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/java/AndroidManifest.xml'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation project(path: ':comLibs')
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+}

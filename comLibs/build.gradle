@@ -8,6 +8,11 @@ bugly {
     appId = "58f697517e" // 注册时分配的App ID
     appKey = 'f54a8ced-6661-432d-b0ab-1964f57a3fa4' // 注册时分配的App Key
 }
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 android {
     compileSdkVersion As.compileSdkVersion
 
@@ -40,14 +45,14 @@ android {
         jvmTarget = '1.8'
     }
     /*在App Module*/
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding  = true
     }
 }
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.core:core-ktx:1.3.2'
     api 'com.google.android.material:material:1.2.1'
@@ -77,18 +82,23 @@ dependencies {
     /* ViewModel */
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     api "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+    /* livedata */
     api "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     api "androidx.activity:activity-ktx:1.1.0"
     api "androidx.fragment:fragment-ktx:1.2.5"
+    /* navigation */
+    api "androidx.navigation:navigation-runtime-ktx:2.3.3"
+    api "androidx.navigation:navigation-fragment-ktx:2.3.3"
+    api "androidx.navigation:navigation-ui-ktx:2.3.3"
 //    api "androidx.core:core-ktx:1.3.2"
 //    api "androidx.collection:collection-ktx:1.1.0"
 //    api "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
-//    api "androidx.navigation:navigation-runtime-ktx:2.3.3"
-//    api "androidx.navigation:navigation-fragment-ktx:2.3.3"
-//    api "androidx.navigation:navigation-ui-ktx:2.3.3"
+
 //    api "androidx.palette:palette-ktx:1.0.0"
 //    api "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0"
 //    api "androidx.room:room-ktx:2.2.6"
 //    api "androidx.work:work-runtime-ktx:2.5.0"
-
+    /* 组件化arouter */
+    api 'com.alibaba:arouter-api:1.5.1'
+    kapt  'com.alibaba:arouter-compiler:1.5.1'
 }

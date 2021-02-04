@@ -16,7 +16,7 @@ import com.blcs.comlibs.R
 /**
  * @Description: 飘心View
  */
-class LikeAnimView @JvmOverloads constructor(context: Context?, attrs: AttributeSet? = null) : AnimationLayout(context!!, attrs) {
+public class LikeAnimView @JvmOverloads constructor(context: Context?, attrs: AttributeSet? = null) : AnimationLayout(context!!, attrs) {
     private var mEnterDuration = 0
     private var mCurveDuration = 0
     private var mLikeRes: MutableList<Int>? = null
@@ -61,7 +61,7 @@ class LikeAnimView @JvmOverloads constructor(context: Context?, attrs: Attribute
      *
      * @param resIds resIds
      */
-    override fun addLikeImages(resIds: MutableList<Int>?) {
+    override fun addLikeImages(resIds: List<Int?>?) {
 //        mLikeRes!!.addAll(resIds)
     }
 
@@ -144,7 +144,7 @@ class LikeAnimView @JvmOverloads constructor(context: Context?, attrs: Attribute
         // 属性动画
         val pointF1 = getTogglePoint(1)
         val pointF2 = getTogglePoint(2)
-        val curveAnimator = ValueAnimator.ofObject(mEvaluatorRecord.getCurrentPath(pointF1, pointF2), pointStart, pointEnd)
+        val curveAnimator = ValueAnimator.ofObject(mEvaluatorRecord?.getCurrentPath(pointF1, pointF2), pointStart, pointEnd)
         curveAnimator.addUpdateListener(CurveUpdateLister(child))
         curveAnimator.interpolator = LinearInterpolator()
         return curveAnimator.setDuration(mCurveDuration.toLong())

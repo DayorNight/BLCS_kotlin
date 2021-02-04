@@ -75,7 +75,7 @@ abstract class AnimationLayout @JvmOverloads constructor(
     /**
      * 贝塞尔曲线路径更新事件
      */
-    protected class CurveUpdateLister protected constructor(private val mChild: View) :
+    protected class CurveUpdateLister(private val mChild: View) :
         AnimatorUpdateListener {
         override fun onAnimationUpdate(animation: ValueAnimator) {
             val value = animation.animatedValue as PointF
@@ -88,7 +88,7 @@ abstract class AnimationLayout @JvmOverloads constructor(
     /**
      * 动画结束监听器,用于释放无用的资源
      */
-    protected inner class AnimationEndListener protected constructor(
+    protected inner class AnimationEndListener(
         private val mChild: View,
         private val mParent: ViewGroup,
         private val mAnimatorSet: AnimatorSet
