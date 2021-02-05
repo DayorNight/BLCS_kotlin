@@ -1,12 +1,12 @@
-package com.blcs.mainmodule
+package com.blcs.mainmodule.activity
 
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.blcs.comlibs.base.BaseActivity
 import com.blcs.comlibs.common.Lg
+import com.blcs.mainmodule.R
 import com.blcs.mainmodule.bean.User
 import com.blcs.mainmodule.common.Const
 import com.blcs.mainmodule.databinding.ActivityDatabindingBinding
@@ -25,10 +25,10 @@ class DatabindingActivity : BaseActivity<ActivityDatabindingBinding>() {
 
         binding.user = user
         // user 数据该变 通知UI更新
-        viewModel.user.observe(this,
-            Observer {
-                //update ui
-            })
+//        viewModel.user.observe(this,
+//            Observer {
+//                update ui
+//            })
     }
 
     /**

@@ -11,8 +11,8 @@ class DatabindingViewModel (
     userRepository: UserRepository
 ) : ViewModel() {
 
-    val userId: String =
-        savedStateHandle["uid"] ?: throw IllegalArgumentException("missing user id")
-    val user: LiveData<User> =  userRepository.getUser(userId)
+//    val userId: String =
+//        savedStateHandle["uid"] ?: throw IllegalArgumentException("missing user id")
+//    val user: LiveData<User> =  userRepository.getUser(userId)
 
 }

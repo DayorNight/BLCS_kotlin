@@ -26,14 +26,23 @@ https://www.jianshu.com/p/230427ae6830
 https://developer.android.google.cn/guide/navigation/navigation-getting-started
 12.组件化：Arouter
 https://github.com/alibaba/ARouter/blob/master/README_CN.md
+13.沉浸式状态栏：ImmersionBar
+https://github.com/gyf-dev/ImmersionBar
+14.动画库：lottie
+http://airbnb.io/lottie/#/android
+https://lottiefiles.com/
+
 
 ### 使用说明
 1.bugly 检查app更新 ： MrBugly.checkUpgrade()
 
-distributionUrl=file\:///E:/As/g-adle-6.5-bin.zip
 
+distributionUrl=file\:///E:/As/g-adle-6.5-bin.zip
 ### 后续
-1.组件化：Arouter
+
+
+1.欢迎页面
+倒计时按钮
+
 2.导航组件
 后续：https://developer.android.google.cn/guide/navigation/navigation-getting-started
-3.欢迎页面

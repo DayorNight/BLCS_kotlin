@@ -3,6 +3,7 @@ package com.blcs.comlibs.base
 import android.app.Application
 import android.content.Context
 import android.os.Process
+import com.alibaba.android.arouter.launcher.ARouter
 import com.blcs.comlibs.BuildConfig
 import com.blcs.comlibs.common.*
 import com.blcs.comlibs.crash.Cockroach
@@ -45,6 +46,16 @@ abstract class BaseApp : Application() {
          * bugly
          */
         initBugly()
+
+        /**
+         *  组件化ARouter
+         */
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog()
+            ARouter.openDebug()
+        }
+        ARouter.init(this)
+
     }
 
     private fun initBugly() {

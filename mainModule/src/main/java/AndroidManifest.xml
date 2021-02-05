@@ -3,8 +3,8 @@
     package="com.blcs.mainmodule">
 
     <application>
-        <activity android:name=".MainActivity" android:launchMode="singleTask" android:theme="@style/Theme.BLCSkotin"/>
-        <activity android:name=".DatabindingActivity" />
+        <activity android:name=".activity.MainActivity" android:launchMode="singleTask" android:theme="@style/Theme.BLCSkotin"/>
+        <activity android:name=".activity.DatabindingActivity" />
     </application>
 
 </manifest>
