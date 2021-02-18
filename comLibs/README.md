@@ -31,18 +31,21 @@ https://github.com/gyf-dev/ImmersionBar
 14.动画库：lottie
 http://airbnb.io/lottie/#/android
 https://lottiefiles.com/
+15.ViewPager指示器：MagicIndicator
+https://github.com/hackware1993/MagicIndicator
+
 
 
 ### 使用说明
 1.bugly 检查app更新 ： MrBugly.checkUpgrade()
 
+### 引用本地文件
+distributionUrl=file\:///E:/As/gradle-6.5-bin.zip
 
-distributionUrl=file\:///E:/As/g-adle-6.5-bin.zip
+
 ### 后续
 
-
-1.欢迎页面
-倒计时按钮
-
-2.导航组件
+1.导航组件
 后续：https://developer.android.google.cn/guide/navigation/navigation-getting-started
+
+2.Android广告图片轮播控件bannar   https://github.com/youth5201314/banner

@@ -110,6 +110,8 @@ dependencies {
     // kotlin扩展（可选）
     api 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
 
-    /*lottie*/
+    /* lottie */
     api "com.airbnb.android:lottie:3.6.0"
+    /* magicindicator */
+    api project(':magicindicator')
 }

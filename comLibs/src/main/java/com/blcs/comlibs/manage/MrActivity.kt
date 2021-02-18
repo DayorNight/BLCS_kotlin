@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Process
 import android.util.Log
+import com.blcs.comlibs.common.Lg
 import java.util.*
 
 /**
@@ -14,7 +15,8 @@ class MrActivity private constructor() {
 
     companion object {
         // Activity栈
-        private var activityStack: Stack<Activity?>? = null
+//        private var activityStack: Stack<Activity?>? = null
+        private var activityStack = Stack<Activity>()
 
         /**
          * 单一实例
@@ -23,6 +25,7 @@ class MrActivity private constructor() {
         val instance: MrActivity by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
             MrActivity()
         }
+
         /**
          * 重启应用
          * @param activity
@@ -52,7 +55,11 @@ class MrActivity private constructor() {
                     return Class.forName(intent.component!!.className) as Class<out Activity>
                 } catch (e: ClassNotFoundException) {
                     //Should not happen, print it to the log!
-                    Log.e("getLauncherActivity", "Failed when resolving the restart activity class via getLaunchIntentForPackage, stack trace follows!", e)
+                    Log.e(
+                        "getLauncherActivity",
+                        "Failed when resolving the restart activity class via getLaunchIntentForPackage, stack trace follows!",
+                        e
+                    )
                 }
             }
             return null
@@ -63,49 +70,44 @@ class MrActivity private constructor() {
             System.exit(10)
         }
     }
+
     /**
      * 添加Activity到堆栈
      */
     fun addActivity(activity: Activity?) {
-        if (activityStack == null) {
-            activityStack = Stack()
-        }
-        activityStack!!.add(activity)
+        activityStack.add(activity)
     }
 
     /**
      * 获取当前Activity（堆栈中最后一个压入的）
      */
     fun currentActivity(): Activity? {
-        return activityStack!!.lastElement()
+        if (activityStack.empty()) return null
+        return activityStack.lastElement()
     }
 
     /**
      * 结束当前Activity（堆栈中最后一个压入的）
      */
     fun finishActivity() {
-        val activity = activityStack!!.lastElement()
+        val activity = activityStack.lastElement()
         finishActivity(activity)
     }
 
     /**
      * 结束指定的Activity
      */
-    fun finishActivity(activity: Activity?) {
-        var activity = activity
-        if (activity != null) {
-            activityStack!!.remove(activity)
-            activity.finish()
-            activity = null
-        }
+    fun finishActivity(activity: Activity) {
+        activityStack.remove(activity)
+        activity.finish()
     }
 
     /**
      * 结束指定类名的Activity
      */
     fun finishActivity(cls: Class<*>) {
-        for (activity in activityStack!!) {
-            if (activity!!.javaClass == cls) {
+        for (activity in activityStack) {
+            if (activity.javaClass == cls) {
                 finishActivity(activity)
                 break
             }
@@ -116,12 +118,12 @@ class MrActivity private constructor() {
      * 结束所有Activity
      */
     fun finishAllActivity() {
-        for (i in activityStack!!.indices) {
-            if (null != activityStack!![i]) {
-                activityStack!![i]!!.finish()
+        for (i in activityStack.indices) {
+            if (null != activityStack[i]) {
+                activityStack[i].finish()
             }
         }
-        activityStack!!.clear()
+        activityStack.clear()
     }
 
     /**
