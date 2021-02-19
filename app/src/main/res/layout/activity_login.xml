@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/ic_login"
+        tools:context=".activity.LoginActivity">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/view_animation1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_login"
+            app:lottie_rawRes="@raw/anim_people"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一键登录"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="@dimen/margin6"
+            android:paddingBottom="@dimen/margin6"
+            android:textSize="@dimen/sp_18"
+            android:onClick="onClickView"
+            android:background="@drawable/bg_login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.541" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@+id/btn_login"
+            app:layout_constraintRight_toRightOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            android:layout_marginTop="30dp"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/white"
+            android:text="其他方式登录"/>
+        <ImageView
+            android:id="@+id/iv_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_des"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_wx"
+            />
+
+        <ImageView
+            android:id="@+id/iv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/iv_wx"
+            app:layout_constraintRight_toLeftOf="@+id/iv_wx"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/ic_qq"
+            />
+
+        <ImageView
+            android:id="@+id/iv_wb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/iv_wx"
+            app:layout_constraintLeft_toRightOf="@+id/iv_wx"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/ic_wb"
+            />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="14sp"
+            android:buttonTint="@color/white"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/margin18"
+            android:text="同意《xxxxxxx》和《xxxxxx》协议"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

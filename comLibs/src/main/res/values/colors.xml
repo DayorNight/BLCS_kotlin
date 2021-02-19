@@ -8,6 +8,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="alpha">#00ffffff</color>
+    <color name="alpha3">#33ffffff</color>
 
     <!--alpha 透明度-->
     <!--100% —FF-->

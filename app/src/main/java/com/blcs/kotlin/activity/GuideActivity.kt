@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.blcs.comlibs.base.BaseActivity
+import com.blcs.comlibs.common.LinArouter
 import com.blcs.kotlin.R
 import com.blcs.kotlin.common.Const
 import com.blcs.kotlin.databinding.ActivityGuideBinding
@@ -55,6 +56,6 @@ class GuideActivity : BaseActivity<ActivityGuideBinding>() {
     }
 
     fun onClickView(view : View){
-        //TODO 登陆界面
+        LinArouter.toActivity(Const.Activit_Login, this)
     }
 }

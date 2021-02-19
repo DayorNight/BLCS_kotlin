@@ -35,7 +35,6 @@ https://lottiefiles.com/
 https://github.com/hackware1993/MagicIndicator
 
 
-
 ### 使用说明
 1.bugly 检查app更新 ： MrBugly.checkUpgrade()
 
@@ -49,3 +48,7 @@ distributionUrl=file\:///E:/As/gradle-6.5-bin.zip
 后续：https://developer.android.google.cn/guide/navigation/navigation-getting-started
 
 2.Android广告图片轮播控件bannar   https://github.com/youth5201314/banner
+
+3.一键登录 闪验：
+https://shanyan.253.com/document/details?lid=519&cid=93&pc=28&pn=%25E9%2597%25AA%25E9%25AA%258CSDK
+
