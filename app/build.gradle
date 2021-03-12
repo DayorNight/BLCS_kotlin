@@ -8,13 +8,17 @@ kapt {
         arg("AROUTER_MODULE_NAME", project.getName())
     }
 }
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     signingConfigs {
         release {
-            storeFile file('F:\\workSpace\\BLCS-kotin\\app\\blcs.jks')
-            storePassword '123456.'
-            keyAlias 'blcs'
-            keyPassword '123456.'
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['keystore'])
+            storePassword keystoreProperties['storePassword']
         }
     }
     compileSdkVersion As.compileSdkVersion
@@ -25,7 +29,7 @@ android {
         targetSdkVersion As.targetSdkVersion
         versionCode As.versionCode
         versionName As.versionName
-        signingConfig signingConfigs.release
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,6 +40,12 @@ android {
             shrinkResources true   //排除没有引用到的资源  APK瘦身
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
@@ -59,7 +69,7 @@ dependencies {
 
     kapt 'com.alibaba:arouter-compiler:1.5.1'
     if (!isModule){
-        implementation project(':mainModule')
+        implementation project(':module-main')
     }
 
 }

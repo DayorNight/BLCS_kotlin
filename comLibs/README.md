@@ -48,7 +48,17 @@ distributionUrl=file\:///E:/As/gradle-6.5-bin.zip
 后续：https://developer.android.google.cn/guide/navigation/navigation-getting-started
 
 2.Android广告图片轮播控件bannar   https://github.com/youth5201314/banner
+3.SmartRefreshLayout   https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts
+Bigkoo/Android-PickerView  时间选择器
+justauth/JustAuth  登录开源组件
+LuckSiege/PictureSelector 图片选择器
+gedoor/MyBookshelf 阅读是一款可以自定义来源阅读网络内容的工具  smuyyh/BookReader
 
-3.一键登录 闪验：
+
+https://github.com/JakeWharton/RxBinding
+https://github.com/google/iosched
+
+###条件不足未集成
+1.一键登录 闪验：
 https://shanyan.253.com/document/details?lid=519&cid=93&pc=28&pn=%25E9%2597%25AA%25E9%25AA%258CSDK
 

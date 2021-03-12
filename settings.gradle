@@ -1,5 +1,5 @@
-include ':mainModule'
+include ':module-main'  //主模块
 include ':app'
-include ':comLibs'
-include ':magicindicator'
+include ':comLibs'//公共库
+include ':magicindicator'//viewpager 指示器库
 rootProject.name = "BLCS-kotin"

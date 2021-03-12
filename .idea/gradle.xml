@@ -14,7 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/comLibs" />
             <option value="$PROJECT_DIR$/magicindicator" />
-            <option value="$PROJECT_DIR$/mainModule" />
+            <option value="$PROJECT_DIR$/module-main" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
