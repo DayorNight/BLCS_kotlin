@@ -54,11 +54,15 @@ justauth/JustAuth  登录开源组件
 LuckSiege/PictureSelector 图片选择器
 gedoor/MyBookshelf 阅读是一款可以自定义来源阅读网络内容的工具  smuyyh/BookReader
 
-
 https://github.com/JakeWharton/RxBinding
 https://github.com/google/iosched
 
-###条件不足未集成
+### 条件不足未集成
 1.一键登录 闪验：
 https://shanyan.253.com/document/details?lid=519&cid=93&pc=28&pn=%25E9%2597%25AA%25E9%25AA%258CSDK
 
+### 页面
+#### Activity
+SplashActivity  欢迎页
+GuideActivity   引导页
+LoginActivity   登陆页

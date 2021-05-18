@@ -1,10 +1,13 @@
 package com.blcs.comlibs.base
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.blcs.comlibs.R
+import com.blcs.comlibs.common.toast
 import com.gyf.immersionbar.ImmersionBar
 import com.gyf.immersionbar.ktx.immersionBar
 
@@ -43,5 +46,10 @@ abstract class BaseActivity<viewBinding : ViewDataBinding> : AppCompatActivity()
      * 设置是否全屏
      */
     open fun setFullScreen() = false
+
+
+    fun defaultToast(){
+        getString(R.string.un_developed).toast(this)
+    }
 
 }

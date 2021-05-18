@@ -23,15 +23,15 @@
             android:name="android.max_aspect"
             android:value="2.4" />
 
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity" android:label="@string/activity_splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.GuideActivity" android:label="@string/activity_guide" />
+        <activity android:name=".activity.LoginActivity"  android:label="@string/activity_login"/>
     </application>
 
 </manifest>

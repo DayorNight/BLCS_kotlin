@@ -97,7 +97,6 @@ class Cockroach private constructor(ctx: Context, callBack: ICrashCallBack?) {
         /*解除 android P 反射限制*/Reflection.unseal(ctx)
         initActivityKiller()
         Thread.setDefaultUncaughtExceptionHandler { thread: Thread, throwable: Throwable? ->
-            Lg.e("======1111111")
             iCrashCallBack.uncaughtException(ctx, thread, throwable)
             //主线程闪退抛出
             if (thread === Looper.getMainLooper().thread) {
@@ -106,7 +105,6 @@ class Cockroach private constructor(ctx: Context, callBack: ICrashCallBack?) {
                         //异常处理
                         Looper.loop()
                     } catch (exception: Exception) {
-                        Lg.e("======2222222")
                         iCrashCallBack.uncaughtException(ctx, thread, exception)
                     }
 //                }
