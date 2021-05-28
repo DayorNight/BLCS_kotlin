@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--工具栏-->
+    <string-array name="Utils">
+        <item>二维码</item>
+
+    </string-array>
+    <!--View-->
+    <string-array name="View">
+        <item>仿微信功能及控件</item>
+
+    </string-array>
+    <!--other-->
+    <string-array name="Other">
+        <item>博客</item>
+
+    </string-array>
+</resources>

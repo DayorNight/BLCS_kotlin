@@ -1,5 +1,5 @@
 ext {
-    isModule = false
+    isModule = true
     isModuleId = isModule? 'com.android.application':'com.android.library'
     As = [
             compileSdkVersion: 30,

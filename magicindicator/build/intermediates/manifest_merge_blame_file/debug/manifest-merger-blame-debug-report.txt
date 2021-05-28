@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="14"
-6-->F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
+6-->F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="28" />
-7-->F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
+7-->F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
 8
 9</manifest>

@@ -1,32 +1,18 @@
 package com.blcs.comlibs.common
 
 import android.app.Activity
-import android.content.Context
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blcs.comlibs.R
+import com.blcs.comlibs.common.LinArouter.getArouter
 
-/**
- * Arouter 组件化工具
- */
+
 object LinArouter {
+    fun getArouter(url: String): Postcard = ARouter.getInstance().build(url)
+        .withTransition(R.anim.alpha_push_in, R.anim.alpha_push_out)
 
-}
-/**
- * 跳转Activity
- * @param url "/main/MainActivity"
- */
-fun Activity.toActivity(url: String, context: Context) {
-    ARouter.getInstance().build(url).withTransition(R.anim.alpha_push_in,R.anim.alpha_push_out).navigation(context)
-}
-
-/**
- * 跳转Activity 携带参数
- */
-fun Activity.toActivity(url: String, bundle: Bundle) {
-    ARouter.getInstance().build(url)
-        .with(bundle)
-        .navigation()
 }
 
 /**
@@ -34,5 +20,24 @@ fun Activity.toActivity(url: String, bundle: Bundle) {
  * @param url "/main/MainActivity"
  */
 fun Activity.toActivity(url: String) {
-    ARouter.getInstance().build(url).navigation()
+    getArouter(url).navigation()
 }
+
+fun Fragment.toActivity(url: String) {
+    getArouter(url).navigation()
+}
+
+/**
+ * 跳转Activity 携带参数
+ */
+fun Activity.toActivity(url: String, bundle: Bundle) {
+    getArouter(url).withBundle("bundle", bundle)
+        .navigation()
+}
+
+fun Fragment.toFragment(fragmentTag: String) {
+    getArouter(ConstKey.Activit_Public).withString(ConstKey.WHERE, fragmentTag)
+        .navigation()
+}
+
+

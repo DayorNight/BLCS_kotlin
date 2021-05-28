@@ -5,6 +5,7 @@
     <application>
         <activity android:name=".activity.MainActivity" android:launchMode="singleTask" android:theme="@style/Theme.BLCSkotin"/>
         <activity android:name=".activity.DatabindingActivity" />
+        <activity android:name=".activity.PublicActivity"/>
     </application>
 
 </manifest>

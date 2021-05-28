@@ -4,7 +4,7 @@ import android.util.Log
 import com.blcs.comlibs.BuildConfig
 
 object Lg {
-    private const val TAG = "V6.38========"
+    private const val TAG = "V1.0.0========"
     /*类名*/
     private var className : String? = null
 

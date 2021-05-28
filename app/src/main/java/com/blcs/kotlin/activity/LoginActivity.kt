@@ -11,8 +11,6 @@ import androidx.annotation.NonNull
 import androidx.core.content.ContextCompat
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.blcs.comlibs.base.BaseActivity
-import com.blcs.comlibs.common.Lg
-import com.blcs.comlibs.common.LinMMKV
 import com.blcs.comlibs.common.toActivity
 import com.blcs.comlibs.common.toast
 import com.blcs.comlibs.interfaces.IClickListener
@@ -74,7 +72,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
      * 一键登录
      */
     fun onClickOauth(view: View){
-        toActivity(Const.Activit_Main, this)
+        toActivity(Const.Activit_Main)
         finish()
     }
 

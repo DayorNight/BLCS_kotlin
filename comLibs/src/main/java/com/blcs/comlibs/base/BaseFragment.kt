@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.blcs.comlibs.R
 
 abstract class BaseFragment<viewBinding : ViewDataBinding> : Fragment() {
 
@@ -55,5 +54,5 @@ abstract class BaseFragment<viewBinding : ViewDataBinding> : Fragment() {
     /**
      * 定义UI
      */
-    abstract fun initUI(binding: viewBinding)
+    abstract fun initUI(bindView: viewBinding)
 }

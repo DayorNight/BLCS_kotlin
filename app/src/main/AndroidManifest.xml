@@ -23,7 +23,7 @@
             android:name="android.max_aspect"
             android:value="2.4" />
 
-        <activity android:name=".activity.SplashActivity" android:label="@string/activity_splash" >
+        <activity android:name=".activity.SplashActivity" android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

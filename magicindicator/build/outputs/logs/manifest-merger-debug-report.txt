@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml:1:1-58
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml:1:1-58
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml:1:1-58
+ADDED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml:1:1-58
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml:1:1-58
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml:1:1-58
 	package
-		ADDED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml:1:11-55
-		INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-		INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
+		ADDED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml:1:11-55
+		INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+		INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml:1:1-58
+		ADDED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml:1:1-58
 uses-sdk
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-		ADDED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-		INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
+		INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+		ADDED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+		INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-		ADDED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
-		INJECTED from F:\workSpace\BLCS-kotin\magicindicator\src\main\AndroidManifest.xml
+		INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+		ADDED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml
+		INJECTED from F:\BLCS_kotlin\magicindicator\src\main\AndroidManifest.xml

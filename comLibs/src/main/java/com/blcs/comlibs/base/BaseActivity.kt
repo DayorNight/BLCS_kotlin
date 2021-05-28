@@ -1,18 +1,18 @@
 package com.blcs.comlibs.base
 
-import android.content.Context
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.blcs.comlibs.R
 import com.blcs.comlibs.common.toast
-import com.gyf.immersionbar.ImmersionBar
+import com.blcs.comlibs.manage.MrFragment
 import com.gyf.immersionbar.ktx.immersionBar
 
 abstract class BaseActivity<viewBinding : ViewDataBinding> : AppCompatActivity() {
-
+    val mrFragment by lazy {
+        MrFragment.instance.get(this)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         /*沉浸式状态栏*/
@@ -21,6 +21,8 @@ abstract class BaseActivity<viewBinding : ViewDataBinding> : AppCompatActivity()
                 transparentStatusBar()
             }else{
                 statusBarColor(R.color.colorPrimary)
+                //处理布局重叠问题
+                fitsSystemWindows(true)
             }
             autoDarkModeEnable(true)
         }
@@ -40,7 +42,7 @@ abstract class BaseActivity<viewBinding : ViewDataBinding> : AppCompatActivity()
     /**
      * 定义UI
      */
-    abstract fun initUI(binding: viewBinding)
+    abstract fun initUI(bindView: viewBinding)
 
     /**
      * 设置是否全屏

@@ -6,8 +6,6 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.blcs.comlibs.base.BaseActivity
-import com.blcs.comlibs.common.KEY_GUIDE
-import com.blcs.comlibs.common.LinArouter
 import com.blcs.comlibs.common.LinMMKV
 import com.blcs.comlibs.common.toActivity
 import com.blcs.kotlin.R
@@ -28,7 +26,7 @@ class GuideActivity : BaseActivity<ActivityGuideBinding>() {
 
     override fun setLayoutId() = R.layout.activity_guide
     override fun initUI(binding: ActivityGuideBinding) {
-        LinMMKV.put(KEY_GUIDE,true)
+        LinMMKV.put(LinMMKV.KEY_GUIDE,true)
         /*viewpager 指示器*/
         val circleNavigator = CircleNavigator(this)
         circleNavigator.circleCount = 4
@@ -58,7 +56,7 @@ class GuideActivity : BaseActivity<ActivityGuideBinding>() {
     }
 
     fun onClickView(view : View){
-        toActivity(Const.Activit_Login, this)
+        toActivity(Const.Activit_Login)
         finish()
     }
 }

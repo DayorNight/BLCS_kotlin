@@ -33,6 +33,10 @@ http://airbnb.io/lottie/#/android
 https://lottiefiles.com/
 15.ViewPager指示器：MagicIndicator
 https://github.com/hackware1993/MagicIndicator
+16.加载图片：glide
+https://github.com/bumptech/glide
+17.二维码：glide
+https://github.com/yuzhiqiang1993/zxing
 
 
 ### 使用说明

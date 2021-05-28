@@ -11,6 +11,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#33b422</color>
     <color name="gray">#bfbfbf</color>
+    <color name="blue">#303F9F</color>
     <!--alpha 透明度-->
     <!--100% —FF-->
     <!--95% — F2-->

@@ -1,11 +1,6 @@
 package com.blcs.mainmodule.activity
 
-import android.graphics.Color
-import android.view.LayoutInflater
 import android.view.LayoutInflater.*
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -17,22 +12,20 @@ import com.blcs.mainmodule.databinding.ActivityMainBinding
 import com.blcs.mainmodule.fragment.CommonFragment
 import com.blcs.mainmodule.fragment.HomeFragment
 import com.blcs.mainmodule.fragment.MeFragment
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import org.w3c.dom.Text
 
 
 @Route(path = Const.Activit_Main)
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    override fun setFullScreen() = false
 
     override fun setLayoutId() = R.layout.activity_main
 
     override fun initUI(binding: ActivityMainBinding) {
         /* viewpager */
         binding.vpMain.apply {
-            val homeFragment = HomeFragment.newInstance(1)
-            val commonFragment = CommonFragment.newInstance(2)
-            val meFragment = MeFragment.newInstance(3)
+            val homeFragment = HomeFragment.instance
+            val commonFragment = CommonFragment.instance
+            val meFragment = MeFragment.instance
             val fragments = arrayListOf(homeFragment, commonFragment, meFragment)
             /*viewpager*/
             adapter = object : FragmentPagerAdapter(supportFragmentManager,

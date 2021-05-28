@@ -44,7 +44,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
      */
     private fun startNetActivity() {
         //判断是否已经进入过引导页
-        val firstStart = LinMMKV.get(KEY_GUIDE, false) as Boolean
+        val firstStart = LinMMKV.get(LinMMKV.KEY_GUIDE, false) as Boolean
         if (firstStart){
             toActivity(Const.Activit_Login, this)
         }else{

@@ -3,12 +3,13 @@ package com.blcs.comlibs.common
 import android.os.Parcelable
 import com.tencent.mmkv.MMKV
 
-const val KEY_GUIDE = "引导页"//第一次安装开启
+
 
 /**
  * 存本地数据
  */
 object LinMMKV {
+    const val KEY_GUIDE = "引导页"//第一次安装开启
     /**
      * 存放数据
      */

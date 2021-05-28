@@ -7,11 +7,11 @@ import com.blcs.comlibs.base.BaseApp
 class BlcsApp : BaseApp() {
 
     override fun initSDK() {
-        /* 组件化 */
-        if (BuildConfig.DEBUG) {
-            ARouter.openLog()
-            ARouter.openDebug()
-        }
-        ARouter.init(this)
+//        /* 组件化 */
+//        if (BuildConfig.DEBUG) {
+//            ARouter.openLog()
+//            ARouter.openDebug()
+//        }
+//        ARouter.init(this)
     }
 }
