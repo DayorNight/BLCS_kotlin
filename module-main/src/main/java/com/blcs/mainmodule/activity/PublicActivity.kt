@@ -1,11 +1,14 @@
 package com.blcs.mainmodule.activity
 
+import android.content.Intent
 import android.text.TextUtils
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.blcs.comlibs.base.BaseActivity
+import com.blcs.comlibs.common.ConstKey
 import com.blcs.comlibs.common.Lg
 import com.blcs.mainmodule.R
 import com.blcs.mainmodule.common.Const
@@ -24,17 +27,16 @@ class PublicActivity : BaseActivity<ActivityPublicBinding>() {
     var where = ""
 
     override fun setLayoutId() = R.layout.activity_public
-
+    var toolbar :Toolbar? =null
     override fun initUI(bindView: ActivityPublicBinding) {
         ARouter.getInstance().inject(this)
-
+         toolbar = bindView?.tlToolbar
         //设置导航栏图标
         bindView?.tlToolbar.run {
             navigationIcon = ContextCompat.getDrawable(
                 this@PublicActivity,
                 R.drawable.ic_back
             )
-            title = where
             setTitleTextAppearance(this@PublicActivity, R.style.Toolbar_Title)
             contentInsetStartWithNavigation = 0
             setNavigationOnClickListener {
@@ -59,13 +61,21 @@ class PublicActivity : BaseActivity<ActivityPublicBinding>() {
 
         bindView?.flContent.apply {
             Lg.e("===== $where")
+            toolbar?.title = where
             if (TextUtils.isEmpty(where))
                 finish()
             else
                 mrFragment.addFrament(R.id.fl_content, where, intent.extras, true, getFrament(where))
 
         }
+    }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        val where = intent?.getStringExtra(ConstKey.WHERE)
+        Lg.e("========$where")
+        toolbar?.title = where
+        mrFragment.addFrament(R.id.fl_content, where, intent?.extras, true, getFrament(where))
     }
 
     /**

@@ -137,4 +137,8 @@ class MrActivity private constructor() {
     }
 
 
+    /**
+     * 获取Activity 数量
+     */
+    fun getActivitySize() = activityStack.size
 }

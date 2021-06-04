@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.blcs.comlibs.R
+import com.blcs.comlibs.common.Lg
+import com.blcs.comlibs.common.LinApp
 
 /**
  * 片段管理
@@ -40,6 +42,7 @@ class MrFragment {
      * @des 如果剩下 最后一个片段就销毁Activity,否则执行后退栈
      */
     fun back() {
+        Lg.e("==========数量： ${MrActivity.instance.getActivitySize()}")
         if (fragments.size <= 1) {
             clearAllFrament()
             activity?.finish()
@@ -57,18 +60,20 @@ class MrFragment {
      * @param isAnim   是否添加动画
      */
     fun addFrament(viewId: Int, alias: String?, bundle: Bundle?, isAnim: Boolean,base: Fragment) {
-        base?.arguments = bundle
-        val bt = fm?.beginTransaction()
-        if (isAnim) { // 添加动画
-            bt?.setCustomAnimations(
-                R.anim.right_push_in, R.anim.left_push_out,
-                R.anim.left_push_in, R.anim.right_push_out
-            )
-        }
         fragments.add(base)
-        bt?.add(viewId, base, alias)
-            ?.addToBackStack(null)
-            ?.commitAllowingStateLoss()
+        fm?.apply {
+            val bt = beginTransaction()
+            if (isAnim){
+                bt.setCustomAnimations(
+                    R.anim.right_push_in, R.anim.left_push_out,
+                    R.anim.left_push_in, R.anim.right_push_out
+                )
+            }
+            base?.arguments = bundle
+            bt?.add(viewId, base, alias)
+                ?.addToBackStack(null)
+                ?.commitAllowingStateLoss()
+        }
     }
 
     /**

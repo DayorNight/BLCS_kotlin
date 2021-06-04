@@ -18,7 +18,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DatabindingActivity"/>
-        <activity android:name=".activity.PublicActivity"/>
+        <activity android:name=".activity.PublicActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            />
     </application>
 
 </manifest>
