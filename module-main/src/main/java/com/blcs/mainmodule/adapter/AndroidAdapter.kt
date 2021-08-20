@@ -29,7 +29,7 @@ class AndroidAdapter(private val parentFragmentManager: FragmentManager) : BaseM
     }
     var list =  mutableListOf("设计模式","JAVA","Android","其他问题","HR问题")
     var javas = mutableListOf("java基础1","java基础2","java基础3","java集合","java网络","java进程")
-    var androids = mutableListOf("Android基础","Android进阶1","Android进阶2","Android进阶3")
+    var androids = mutableListOf("Android进阶1","Android进阶2","Android进阶3","Android进阶4")
     var androidOthers = mutableListOf("Android其他1","Android其他2","Android其他3","Android其他4")
     var catalogues =  mutableListOf(javas,androids,androidOthers)
     var jsons =  mutableListOf("设计模式","java基础1","java基础2","java基础3","java集合","java网络","java进程")
