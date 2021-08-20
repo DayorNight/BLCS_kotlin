@@ -129,4 +129,7 @@ class QRcodeFragment : BaseFragment<FragmentQrCodeBinding>(), View.OnClickListen
         }
     }
 
+    override fun initData() {
+    }
+
 }

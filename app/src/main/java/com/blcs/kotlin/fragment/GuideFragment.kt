@@ -50,4 +50,7 @@ class GuideFragment : BaseFragment<FragmentGuideBinding>() {
         }
     }
 
+    override fun initData() {
+    }
+
 }

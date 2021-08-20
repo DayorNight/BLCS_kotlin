@@ -1,0 +1,66 @@
+{
+  "code": 200,
+  "message": "",
+  "body": [
+    {
+      "title": "Android基础",
+      "problem": "介绍一下广播（种类/注册方式）？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下 服务（Service的两种启动方式以及有什么区别）？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下ContentProvider（生命周期）？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下android构架？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下android的四大组件？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下Fragment/activity生命周期？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下 屏幕横竖屏切换 时的生命周期变化？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下view的绘制流程？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下 安卓11有什么新的特性？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下Activity的 四种启动模式，原理是怎样的？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下SingleTop和SingleTask启动模式的应用场景？",
+      "answer": ""
+    },
+    {
+      "title": "Android基础",
+      "problem": "介绍一下bindService 的过程，怎么优化后台服务进程的？",
+      "answer": ""
+    }
+  ]
+}

@@ -10,4 +10,5 @@ object Const {
     const val Fragment_QR = "二维码"
     const val Fragment_WEB = "网页"
     const val Fragment_TURNTABLE = "轮盘"
+    const val Fragment_ANDROID = "Android"
 }

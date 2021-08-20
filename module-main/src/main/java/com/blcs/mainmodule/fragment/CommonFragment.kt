@@ -26,4 +26,7 @@ class CommonFragment private constructor(): BaseFragment<FragmentCommonBinding>(
         bindView. location = "广场"
     }
 
+    override fun initData() {
+    }
+
 }

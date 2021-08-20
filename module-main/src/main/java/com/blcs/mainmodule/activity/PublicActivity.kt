@@ -1,6 +1,7 @@
 package com.blcs.mainmodule.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.text.TextUtils
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -13,10 +14,7 @@ import com.blcs.comlibs.common.Lg
 import com.blcs.mainmodule.R
 import com.blcs.mainmodule.common.Const
 import com.blcs.mainmodule.databinding.ActivityPublicBinding
-import com.blcs.mainmodule.fragment.ErrorFragment
-import com.blcs.mainmodule.fragment.QRcodeFragment
-import com.blcs.mainmodule.fragment.TurnTableFragment
-import com.blcs.mainmodule.fragment.WebFragment
+import com.blcs.mainmodule.fragment.*
 
 
 @Route(path = Const.Activit_Public)
@@ -37,7 +35,7 @@ class PublicActivity : BaseActivity<ActivityPublicBinding>() {
                 this@PublicActivity,
                 R.drawable.ic_back
             )
-            setTitleTextAppearance(this@PublicActivity, R.style.Toolbar_Title)
+            setTitleTextColor(Color.WHITE)
             contentInsetStartWithNavigation = 0
             setNavigationOnClickListener {
                 mrFragment.back()
@@ -86,6 +84,7 @@ class PublicActivity : BaseActivity<ActivityPublicBinding>() {
             Const.Fragment_QR -> QRcodeFragment.instance
             Const.Fragment_WEB -> WebFragment.instance
             Const.Fragment_TURNTABLE -> TurnTableFragment.instance
+            Const.Fragment_ANDROID -> AndroidFragment.instance
             else -> ErrorFragment.instance
         }
 

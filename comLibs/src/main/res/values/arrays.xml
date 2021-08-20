@@ -15,9 +15,10 @@
         <item>仿微信功能及控件</item>
 
     </string-array>
-    <!--other-->
+    <!--我的-->
     <string-array name="Other">
-        <item>博客</item>
+        <item>Android</item>
 
     </string-array>
+
 </resources>

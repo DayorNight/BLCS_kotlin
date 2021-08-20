@@ -43,6 +43,7 @@ abstract class BaseFragment<viewBinding : ViewDataBinding> : Fragment() {
             false
         )
         initUI(binding)
+        initData()
         return binding.root
     }
 
@@ -55,4 +56,9 @@ abstract class BaseFragment<viewBinding : ViewDataBinding> : Fragment() {
      * 定义UI
      */
     abstract fun initUI(bindView: viewBinding)
+
+    /**
+     * 初始化数据
+     */
+    abstract fun initData()
 }

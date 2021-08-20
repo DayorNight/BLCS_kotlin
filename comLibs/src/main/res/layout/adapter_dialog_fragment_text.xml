@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/margin18"
+    android:paddingTop="@dimen/margin12"
+    android:paddingBottom="@dimen/margin12"
+    android:paddingRight="@dimen/margin18"
+    android:textColor="@color/black"
+    android:textSize="@dimen/standard_title"
+    android:id="@+id/tv_adapter_dialog_fragment"
+    android:text="@string/app_name">
+
+</TextView>

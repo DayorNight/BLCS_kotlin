@@ -34,4 +34,7 @@ class WebFragment : BaseFragment<FragmentWebBinding>(){
     override fun initUI(bindView: FragmentWebBinding) {
 
     }
+
+    override fun initData() {
+    }
 }

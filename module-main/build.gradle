@@ -48,6 +48,7 @@ android {
 
 dependencies {
     implementation project(path: ':comLibs')
+
     kapt 'com.alibaba:arouter-compiler:1.5.1'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
 }

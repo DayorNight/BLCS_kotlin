@@ -41,4 +41,7 @@ class TurnTableFragment : BaseFragment<FragmentTurntableBinding>(){
             }
 
     }
+
+    override fun initData() {
+    }
 }

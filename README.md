@@ -47,6 +47,8 @@ distributionUrl=file\:///E:/As/gradle-6.5-bin.zip
 
 
 ### 后续
+1.我的页面
+2.android 问题
 
 1.导航组件
 后续：https://developer.android.google.cn/guide/navigation/navigation-getting-started

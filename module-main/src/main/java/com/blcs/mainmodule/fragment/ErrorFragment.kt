@@ -36,4 +36,7 @@ class ErrorFragment : BaseFragment<FragmentErrorBinding>() {
     override fun initUI(bindView: FragmentErrorBinding) {
 
     }
+
+    override fun initData() {
+    }
 }

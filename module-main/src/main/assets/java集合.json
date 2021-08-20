@@ -1,0 +1,115 @@
+{
+	"code": 200,
+	"message": "",
+	"body": [
+		{	
+			"title": "JAVA集合",
+			"problem": "为什么单向链表的查询效率较低？",
+			"answer": "单向链表中的每个元素在空间的存储位置上没有规律，也没有顺序，那么在查找某个元素的时候必须从头节点挨着往后找，直到找到为止。"
+		},{
+			"title": "JAVA集合",
+			"problem": "为什么单向链表的增删效率较高？",
+			"answer": "因为链表每个元素存储的空间是没有顺序的，删除或者添加某个元素只需要让指针重新指向即可。不需要将其他元素位移。所以随机效率较高。"
+		},{
+			"title": "JAVA集合",
+			"problem": "list、set、Map三者区别？",
+			"answer": "List：1.可以允许重复的对象。 2.可以插入多个null元素。3.是一个有序容器，保持了每个元素的插入顺序，输出的顺序就是插入的顺序。4.常用的实现类有 ArrayList、LinkedList 和 Vector。ArrayList 最为流行，它提供了使用索引的随意访问，而 LinkedList 则对于经常需要从 List 中添加或删除元素的场合更为合适。\nSet：1.不允许重复对象2. 无序容器，你无法保证每个元素的存储顺序，TreeSet通过 Comparator  或者 Comparable 维护了一个排序顺序。3. 只允许一个 null 元素4.Set 接口最流行的几个实现类是 HashSet、LinkedHashSet 以及 TreeSet。最流行的是基于 HashMap 实现的 HashSet；TreeSet 还实现了 SortedSet 接口，因此 TreeSet 是一个根据其 compare() 和 compareTo() 的定义进行排序的有序容器。\nMap： 1.Map不是collection的子接口或者实现类。Map是一个接口。\n2.Map 的 每个 Entry 都持有两个对象，也就是一个键一个值，Map 可能会持有相同的值对象但键对象必须是唯一的。3. TreeMap 也通过 Comparator  或者 Comparable 维护了一个排序顺序。4. Map 里你可以拥有随意个 null 值但最多只能有一个 null 键。5.Map 接口最流行的几个实现类是 HashMap、LinkedHashMap、Hashtable 和 TreeMap。（HashMap、TreeMap最常用）"
+		},{
+			"title": "JAVA集合",
+			"problem": "ArrayList 与 LinkedList 区别？",
+			"answer": "ArrayList 是底层实现是数组 插入与删除会移动后面元素的位置，LinkedList底层是双向链表 插入与删除不会移动位置，所以增删比ArrayList快。ArrayList底层是数组 所以 查询比LinkedList快。"
+		},{
+			"title": "JAVA集合",
+			"problem": "ArrayList与vecotor区别？",
+			"answer": "vector类的所有方法都是同步的。可以由两个线程安全地访问一个vector对象、但是一个线程访问vector的话代码要在同步操作上耗费大量的时间。ArrayList不是线程安全的，所以在不保证线程安全的情况下效率更高。"
+		},{
+			"title": "JAVA集合",
+			"problem": "ArrayList 扩容机制？",
+			"answer": "当前数组是由默认构造方法生成的空数组并且第一次添加数据。此时minCapacity等于默认的容量（10）那么根据下面逻辑可以看到最后数组的容量会从0扩容成10。而后的数组扩容才是按照当前容量的1.5倍进行扩容；\n\t当前数组是由自定义初始容量构造方法创建并且指定初始容量为0。此时minCapacity等于1那么根据下面逻辑可以看到最后数组的容量会从0变成1。这边可以看到一个严重的问题，一旦我们执行了初始容量为0，那么根据下面的算法前四次扩容每次都 +1，在第5次添加数据进行扩容的时候才是按照当前容量的1.5倍进行扩容。\n\t当扩容量（newCapacity）大于ArrayList数组定义的最大值后会调用hugeCapacity来进行判断。如果minCapacity已经大于Integer的最大值（溢出为负数）那么抛出OutOfMemoryError（内存溢出）否则的话根据与MAX_ARRAY_SIZE的比较情况确定是返回Integer最大值还是MAX_ARRAY_SIZE。这边也可以看到ArrayList允许的最大容量就是Integer的最大值（-2的31次方~2的31次方减1）。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap 和 Hashtable 的区别？",
+			"answer": "HashMap:（1）非线程安全（2）null可以作为键且只有一个，可以有一个或多个值为 null （3）初始容量16，每次扩充为原来的2倍，如果有给定大小，则会将其扩充为2的幂次方。\n\tHashtable:（1）线程安全 效率低 基本被淘汰 （2）不允许键值为null。（3）初始化大小为11，每次扩充变为原来的2n+1.\n\tJDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashSet如何检查重复？",
+			"answer": "当对象加入HashSet时，HashSet会先计算对象的hashcode值来判断对象加入的位置，同时也会与其他加入的对象的hashcode值作比较，如果没有相符的hashcode,\n\thashSet会假设对象没有重复出现。但是如果发现有相同hashcode值的对象，这时会调用equals方法来检查hashcode相等对象是否真的相同，如果相同，就不会加入。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap底层实现？",
+			"answer": "jdk1.8之前HashMap底层是数组和链表结合在一起使用也就是链表散列。hashMap通过key的hashCode经过扰动函数处理过后得到hash值，然后通过（n-1）& hash判断当前元素存放的位置，\n\t如果当前位置存在元素的话，就判断该元素与要存入的元素的hash值以及key是否相同，如果相同的话，直接覆盖，不相同就通过拉链发解决冲突。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap的长度为什么是2的幂次方？",
+			"answer": "为了能让HashMap存取高效，尽量较少碰撞，也就是要尽量把数据分配均匀。Hash 值的范围值-2147483648到2147483647，前后加起来⼤概40亿的映射空间，只要哈希函数映射得比较均匀松散，一般应用是很难出现碰撞的。但问题是一个40亿长度的数组，内存是放不下的。所以 这个散列值是不能直接拿来用的。用之前还要先做对数组的长度取模运算，得到的余数才能用来要存放 的位置也就是对应的数组下标。这个数组下标的计算方法是“ (n - 1) & hash ”。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap 多线程操作导致死循环问题？",
+			"answer": "主要原因在于并发下的Rehash会造成元素之间形成一个循环链表。\n\t不过，jdk1.8后解决了 这个问题，但是还是不建议在多线程下使用HashMap,因为多线程下使用HashMap还是会存在其他问题比如数据丢失。并发环境下推荐使用ConcurrentHashMap"
+		},{
+			"title": "JAVA集合",
+			"problem": "concurrentHashMap和hashtable 的区别？",
+			"answer": "底层数据结构：\n\tJDK1.7的ConcurrentHashMap底层采用 分段的数组+链表实现，JDK1.8采用的数据结构跟HashMa1.8的结构一样，数组+链表/红黑二叉树。Hashtable和JDK1.8之前的HashMap的底层数据结构类似都是采用数组+链表的形式，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的？\n实现线程安全的方式\n\t在JDK1.7的时候，ConcurrentHashMap对整个桶数组进行了分割分段，每一把锁值锁容器其中一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问率。到了Jdk1.8的时候已经摒弃分段概念，而是直接用\n\tNode数组+链表+红黑树的数据结构来实现，并发控制使用synchronized和Cas来操作。\n\tHashtable使用synchronized来保证线程安全，效率非常低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或轮询状态。"
+		},{
+			"title": "JAVA集合",
+			"problem": "concurrentHashMap线程安全的具体实现方式 底层具体实现？",
+			"answer": "将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问。ConcurrentHashMap是由Segment数组结构和HashEntry数组结构组成。Segment实现了ReentrantLock，所以Segment是一种可重入锁，扮演锁的角色。HashEntry用于存储键值对数据。一个ConcurrentHashMap里包含一个Segement数组。Segment的结构和HashMap类似。是一种数组和链表结构，一个Segment包含一个HashEntry数组，每个HashEntry是一个链表结构的元素，每个Segment守护着一个HashEntry数组里的元素，当对HashEntry数组的数据进行修改时，必须首先获得对应的Segment的锁。\n\tJdk1.8:ConcurrentHashMap取消了Segment分段锁，采用CAS和synchronized来保证并发安全。数据结构跟HashMap1.8的结构类似，数组+链表/红黑二叉树的首节点，这样只要hash不冲突，就不会产生并发，效率又提升N倍。"
+		},{
+			"title": "JAVA集合",
+			"problem": "comparable 和comparator的区别？",
+			"answer": "comparable接口实际上是出自java.lang包，她有一个compareTo方法用来排序，常用在对象的属性的比较上面 comparator接口实际上是出自java.util包，她有一个compare方法用来排序。常用在集合上的比较"
+		},{
+			"title": "JAVA集合",
+			"problem": "介绍一下HashSet和HashMap的关系？",
+			"answer": "1.HashSet：实现了Set接口，它不允许集合中出现重复元素。当我们提到HashSet时，第一件事就是在将对象存储在HashSet之前，要确保重写hashCode（）方法和equals（）方法，这样才能比较对象的值是否相等，确保集合中没有储存相同的对象。如果不重写上述两个方法，那么将使用下面方法默认实现：public boolean add(Object obj)方法用在Set添加元素时，如果元素值重复时返回 \"false\"，如果添加成功则返回\"true\"\n2.HashMap：实现了Map接口，Map接口对键值对进行映射。Map中不允许出现重复的键（Key）。Map接口有两个基本的实现TreeMap和HashMap。TreeMap保存了对象的排列次序，而HashMap不能。HashMap可以有空的键值对（Key（null）-Value（null））HashMap是非线程安全的（非Synchronize），要想实现线程安全，那么需要调用collections类的静态方法synchronizeMap（）实现。public Object put(Object Key,Object value)方法用来将元素添加到map中。\n3.HashSet与HashMap的区别：\n(1)HashMap                                \n    a.实现了Map接口                         \n    b.存储键值对                            \n    c.调用put()向map中添加元素             \n    d.HashMap使用键（Key）计算Hashcode    \n    e.HashMap相对于HashSet较快，因为它是使用唯一的键获取对象         \n(2)HashSet\n    a.实现Set接口\n    b.仅存储对象\n    c.调用add（）方法向Set中添加元素\n    d.HashSet使用成员对象来计算hashcode值，\n      对于两个对象来说hashcode可能相同，\n      所以equals()方法用来判断对象的相等性，\n      如果两个对象不同的话，那么返回false\n    e.HashSet较HashMap来说比较慢"
+		},{
+			"title": "JAVA集合",
+			"problem": "介绍一下SparseArray和hashmap区别？",
+			"answer": "（1）HashMap：我们知道HashMap中默认的存储大小就是一个容量为16的数组，所以当我们创建出一个HashMap对象时，即使里面没有任何元素，也要分别一块内存空间给它，而且，我们再不断的向HashMap里put数据时，当达到一定的容量限制时（这个容量满足这样的一个关系时候将会扩容：HashMap中的数据量>容量*加载因子，而HashMap中默认的加载因子是0.75），HashMap的空间将会扩大，而且扩大后新的空间一定是原来的2倍，假如我们有几十万、几百万条数据，那么HashMap要存储完这些数据将要不断的扩容，而且在此过程中也需要不断的做hash运算，这将对我们的内存空间造成很大消耗和浪费，而且HashMap获取数据是通过遍历Entry[]数组来得到对应的元素，在数据量很大时候会比较慢，所以在Android中，HashMap是比较费内存的，我们在一些情况下可以使用SparseArray和ArrayMap来代替HashMap。\n（2）SparseArray：SparseArray比HashMap更省内存，在某些条件下性能更好，主要是因为它避免了对key的自动装箱（int转为Integer类型），它内部则是通过两个数组来进行数据存储的，一个存储key，另外一个存储value，为了优化性能，它内部对数据还采取了压缩的方式来表示稀疏数组的数据，从而节约内存空间。SparseArray只能存储key为int类型的数据，同时，SparseArray在存储和读取数据时候，使用的是二分查找法，也就是在put添加数据的时候，会使用二分查找法和之前的key比较当前我们添加的元素的key的大小，然后按照从小到大的顺序排列好，所以，SparseArray存储的元素都是按元素的key值从小到大排列好的。 \n而在获取数据的时候，也是使用二分查找法判断元素的位置，所以，在获取数据的时候非常快，比HashMap快的多，因为HashMap获取数据是通过遍历Entry[]数组来得到对应的元素。虽说SparseArray性能比较好，但是由于其添加、查找、删除数据都需要先进行一次二分查找，所以在数据量大的情况下性能并不明显，将降低至少50%。满足下面两个条件我们可以使用SparseArray代替HashMap：1.数据量不大，最好在千级以内2.key必须为int类型，这中情况下的HashMap可以用SparseArray代替：\n（3）ArrayMap：ArrayMap是一个<key,value>映射的数据结构，它设计上更多的是考虑内存的优化，内部是使用两个数组进行数据存储，一个数组记录key的hash值，另外一个数组记录Value值，它和SparseArray一样，也会对key使用二分法进行从小到大排序，在添加、删除、查找数据的时候都是先使用二分查找法得到相应的index，然后通过index来进行添加、查找、删除等操作，所以，应用场景和SparseArray的一样，如果在数据量比较大的情况下，那么它的性能将退化至少50%。ArrayMap应用场景1.数据量不大，最好在千级以内2.数据结构类型为Map类型"
+		},{
+			"title": "JAVA集合",
+			"problem": "介绍一下treemap，红黑树，完全平衡二叉树？",
+			"answer": "TreeMap存储K-V键值对，通过红黑树（R-B tree）实现；\nTreeMap继承了NavigableMap接口，NavigableMap接口继承了SortedMap接口，可支持一系列的导航定位以及导航操作的方法，当然只是提供了接口，需要TreeMap自己去实现；TreeMap实现了Cloneable接口，可被克隆，实现了Serializable接口，可序列化；TreeMap因为是通过红黑树实现，红黑树结构天然支持排序，默认情况下通过Key值的自然顺序进行排序；\n（1）红黑树规则特点：1.节点分为红色或者黑色；2.根节点必为黑色；3.叶子节点都为黑色，且为null；4.连接红色节点的两个子节点都为黑色（红黑树不会出现相邻的红色节点）；5.从任意节点出发，到其每个叶子节点的路径中包含相同数量的黑色节点；6.新加入到红黑树的节点为红色节点；\n（2）红黑树自平衡基本操作：\n变色：在不违反上述红黑树规则特点情况下，将红黑树某个node节点颜色由红变黑，或者由黑变红；\n左旋：逆时针旋转两个节点，让一个节点被其右子节点取代，而该节点成为右子节点的左子节点\n右旋：顺时针旋转两个节点，让一个节点被其左子节点取代，而该节点成为左子节点的右子节点"
+		},{
+			"title": "JAVA集合",
+			"problem": "ConcurrentHashMap在jdk1.8之后的优化？",
+			"answer": "在jdk1.8中主要做了2方面的改进\n改进一：取消segments字段，直接采用transient volatile HashEntry<K,V>[] table保存数据，采用table数组元素作为锁，从而实现了对每一行数据进行加锁，进一步减少并发冲突的概率。\n改进二：将原先table数组＋单向链表的数据结构，变更为table数组＋单向链表＋红黑树的结构。对于hash表来说，最核心的能力在于将key hash之后能均匀的分布在数组中。如果hash之后散列的很均匀，那么table数组中的每个队列长度主要为0或者1。但实际情况并非总是如此理想，虽然ConcurrentHashMap类默认的加载因子为0.75，但是在数据量过大或者运气不佳的情况下，还是会存在一些队列长度过长的情况，如果还是采用单向列表方式，那么查询某个节点的时间复杂度为O(n)；因此，对于个数超过8(默认值)的列表，jdk1.8中采用了红黑树的结构，那么查询的时间复杂度可以降低到O(logN)，可以改进性能。"
+		},{
+			"title": "JAVA集合",
+			"problem": "ConcurrentHashMap，初始化大小是多少？",
+			"answer": "通过new ConcurrentHashMap()此时底层默认初始容量为16。\n如果手动设置初始容量。底层会自动转换为距设置值2倍最近的2的次幂 \n3*2 = 6  距离4和8相等，选择向后转换为8"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap的线程安全问题？",
+			"answer": "问题分析：\n场景1：写线程唯一、读线程不确定，没有迭代操作。使用hashmap不会存在程序不安全，最多就是发生数据不一致性的问题。\n场景2：写线程唯一、读线程不确定，有迭代操作，此时不能使用hashmap，会存在ConcurrentModificationException问题\n场景3: 读写线程是同一个，且唯一，有迭代操作，此时注意不能通过集合方法remove或者add更改，只能通过iterator内方法来更新。不然会存在ConcurrentModificationException问题。\n怎么来解决ConcurrentModificationException问题\n方法1: 在iterator迭代过程和写hashmap的操作都加锁：通过加锁实现线程同步安全,这样在迭代过程避免modCount发生改变，因此不会发生ConcurrentModificationException错误\n方法2：使用ConcurrentHashMap代替HashMap：ConcurrentHashMap是一种线程安全的HashMap。查看源码，ConcurrentHashMap没有设置modCount标志，允许在迭代过程数据发生add或者remove操作"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap实现机制/原理？",
+			"answer": "JDK1.8 之前 HashMap 由 数组+链表 组成的，数组是 HashMap 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）.JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）时，将链表转化为红黑树（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树），以减少搜索时间。\nJDK1.8 之前 HashMap 底层是 数组和链表 结合在一起使用也就是 链表散列。HashMap 通过 key 的 hashCode 经过扰动函数处理过后得到 hash 值，然后通过 (n - 1) & hash 判断当前元素存放的位置（这里的 n 指的是数组的长度），如果当前位置存在元素的话，就判断该元素与要存入的元素的 hash 值以及 key 是否相同，如果相同的话，直接覆盖，不相同就通过拉链法解决冲突。所谓扰动函数指的就是 HashMap 的 hash 方法。使用 hash 方法也就是扰动函数是为了防止一些实现比较差的 hashCode() 方法 换句话说使用扰动函数之后可以减少碰撞。相比于 JDK1.8 的 hash 方法 ，JDK 1.7 的 hash 方法的性能会稍差一点点，因为毕竟扰动了 4 次。\nJDK1.8之后相比于之前的版本，jdk1.8在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为8）时，将链表转化为红黑树，以减少搜索时间。\nloadFactor加载因子是控制数组存放数据的疏密程度，loadFactor越趋近于1，那么 数组中存放的数据(entry)也就越多，也就越密，也就是会让链表的长度增加，loadFactor越小，也就是趋近于0，数组中存放的数据(entry)也就越少，也就越稀疏。loadFactor太大导致查找元素效率低，太小导致数组的利用率低，存放的数据会很分散。loadFactor的默认值为0.75f是官方给出的一个比较好的临界值。给定的默认容量为 16，负载因子为 0.75。Map 在使用过程中不断的往里面存放数据，当数量达到了 16 * 0.75 = 12 就需要将当前 16 的容量进行扩容，而扩容这个过程涉及到 rehash、复制数据等操作，所以非常消耗性能。*threshold = capacity * loadFactor*，当Size>=threshold的时候，那么就要考虑对数组的扩增了，也就是说，这个的意思就是 衡量数组是否需要扩增的一个标准。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap 和 Hashtable 的区别？",
+			"answer": "1.线程是否安全： HashMap 是非线程安全的，HashTable 是线程安全的,因为 HashTable 内部的方法基本都经过synchronized 修饰。（如果你要保证线程安全的话就使用 ConcurrentHashMap 吧！）\n2.效率： 因为线程安全的问题，HashMap 要比 HashTable 效率高一点。另外，HashTable 基本被淘汰，不要在代码中使用它；对 Null key 和 Null value 的支持： HashMap 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个；HashTable 不允许有 null 键和 null 值，否则会抛出 NullPointerException。\n3.初始容量大小和每次扩充容量大小的不同 ： ① 创建时如果不指定容量初始值，Hashtable 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。HashMap 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。② 创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为 2 的幂次方大小（HashMap 中的tableSizeFor()方法保证，下面给出了源代码）。也就是说 HashMap 总是使用 2 的幂作为哈希表的大小,后面会介绍到为什么是 2 的幂次方。\n4.底层数据结构： JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap 和 HashSet 区别？",
+			"answer": "如果你看过 HashSet 源码的话就应该知道：HashSet 底层就是基于 HashMap 实现的。（HashSet 的源码非常非常少，因为除了 clone()、writeObject()、readObject()是 HashSet 自己不得不实现之外，其他方法都是直接调用 HashMap 中的方法。\nHashMap：1.实现了 Map 接口2.存储键值对3.调用 put()向 map 中添加元素\t4.HashMap 使用键（Key）计算 Hashcode\nHashSet：1.实现 Set 接口2.仅存储对象3.调用 add()方法向 Set 中添加元素4.HashSet 使用成员对象来计算 hashcode 值，对于两个对象来说 hashcode 可能相同，所以 equals()方法用来判断对象的相等性，"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashMap 和 TreeMap 区别？",
+			"answer": "TreeMap 和HashMap 都继承自AbstractMap ，但是需要注意的是TreeMap它还实现了NavigableMap接口和SortedMap 接口。实现 NavigableMap 接口让 TreeMap 有了对集合内元素的搜索的能力。实现SortMap接口让 TreeMap 有了对集合中的元素根据键排序的能力。默认是按 key 的升序排序，不过我们也可以指定排序的比较器。相比于HashMap来说 TreeMap 主要多了对集合中的元素根据键排序的能力以及对集合内元素的搜索的能力。"
+		},{
+			"title": "JAVA集合",
+			"problem": "HashSet 如何检查重复？",
+			"answer": "当你把对象加入HashSet时，HashSet 会先计算对象的hashcode值来判断对象加入的位置，同时也会与其他加入的对象的 hashcode 值作比较，如果没有相符的 hashcode，HashSet 会假设对象没有重复出现。但是如果发现有相同 hashcode 值的对象，这时会调用equals()方法来检查 hashcode 相等的对象是否真的相同。如果两者相同，HashSet 就不会让加入操作成功。"
+		},{
+			"title": "JAVA集合",
+			"problem": "介绍一下哈希表原理？",
+			"answer": "哈希表（Hash table，也叫散列表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。\n记录的存储位置=f(关键字):这里的对应关系f称为散列函数，又称为哈希（Hash函数），采用散列技术将记录存储在一块连续的存储空间中，这块连续存储空间称为散列表或哈希表（Hash table）。\n哈希表hashtable(key，value) 就是把Key通过一个固定的算法函数既所谓的哈希函数转换成一个整型数字，然后就将该数字对数组长度进行取余，取余结果就当作数组的下标，将value存储在以该数字为下标的数组空间里。（或者：把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，而不可能从散列值来唯一的确定输入值。简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。）\n而当使用哈希表进行查询的时候，就是再次使用哈希函数将key转换为对应的数组下标，并定位到该空间获取value，如此一来，就可以充分利用到数组的定位性能进行数据定位。"
+		},{
+			"title": "JAVA集合",
+			"problem": "处理hash冲突的方法？",
+			"answer": "1.开放地址法2.再哈希法3.链地址法4.建立公共溢出区\n1.开放定址法：用开放定址法解决冲突的做法是：当冲突发生时，使用某种探查(亦称探测)技术在散列表中形成一个探查(测)序列。 沿此序列逐个单元地查找，直到找到给定 的关键字，或者碰到一个开放的地址(即该地址单元为空)为止（若要插入，在探查到开放的地址，则可将待插入的新结点存人该地址单元）。查找时探查到开放的 地址则表明表中无待查的关键字，即查找失败。\n注意：①用开放定址法建立散列表时，建表前须将表中所有单元(更严格地说，是指单元中存储的关键字)置空。②空单元的表示与具体的应用相关。按照形成探查序列的方法不同，可将开放定址法区分为线性探查法、线性补偿探测法、随机探测等 。\n2.再哈希法：这种方法是同时构造多个不同的哈希函数：\n Hi=RH1（key）  i=1，2，…，k当哈希地址Hi=RH1（key）发生冲突时，再计算Hi=RH2（key）……，直到冲突不再产生。这种方法不易产生聚集，但增加了计算时间。\n3.链地址法：这种方法的基本思想是将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。\n4.建立公共溢出区：这种方法的基本思想是：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表"
+		}
+	]
+}
