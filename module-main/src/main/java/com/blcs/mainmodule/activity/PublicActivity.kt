@@ -85,6 +85,8 @@ class PublicActivity : BaseActivity<ActivityPublicBinding>() {
             Const.Fragment_WEB -> WebFragment.instance
             Const.Fragment_TURNTABLE -> TurnTableFragment.instance
             Const.Fragment_ANDROID -> AndroidFragment.instance
+            Const.Fragment_Handler -> HandlerFragment.instance
+            Const.Fragment_WorkManager -> WorkManagerFragment.instance
             else -> ErrorFragment.instance
         }
 

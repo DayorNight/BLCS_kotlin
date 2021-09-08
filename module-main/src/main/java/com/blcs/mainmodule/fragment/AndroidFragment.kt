@@ -19,9 +19,8 @@ class AndroidFragment : BaseFragment<FragmentAndroidBinding>() {
 
     override fun setLayoutId() = R.layout.fragment_android
     private var androidAdapter: AndroidAdapter? = null
-
-    override fun initUI(bindView: FragmentAndroidBinding) {
-        bindView.rvViewpager.apply {
+    override fun initUI(binding: FragmentAndroidBinding) {
+        binding.rvViewpager.apply {
             androidAdapter = AndroidAdapter(parentFragmentManager)
             LinRecycler.init(
                 activity,

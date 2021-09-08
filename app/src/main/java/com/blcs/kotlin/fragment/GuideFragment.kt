@@ -32,8 +32,8 @@ class GuideFragment : BaseFragment<FragmentGuideBinding>() {
 
     override fun setLayoutId() = R.layout.fragment_guide
 
-    override fun initUI(bindView: FragmentGuideBinding) {
-        bindView.location = when (pos) {
+    override fun initUI(binding: FragmentGuideBinding) {
+        binding.location = when (pos) {
             0 -> {
                 "引导1"
             }

@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_app512"
         android:supportsRtl="true"
         android:theme="@style/Theme.BLCSkotin">
-        <activity android:name=".activity.MainActivity" android:label="@string/app_name">
+        <activity android:name=".activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

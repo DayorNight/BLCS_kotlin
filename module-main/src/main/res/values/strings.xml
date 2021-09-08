@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">BLCS</string>
+    <string name="app_name">首页</string>
     <string name="str_qr_input">请输入要转换的字符串</string>
 </resources>

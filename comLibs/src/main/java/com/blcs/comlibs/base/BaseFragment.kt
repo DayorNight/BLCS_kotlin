@@ -55,7 +55,7 @@ abstract class BaseFragment<viewBinding : ViewDataBinding> : Fragment() {
     /**
      * 定义UI
      */
-    abstract fun initUI(bindView: viewBinding)
+    abstract fun initUI(binding: viewBinding)
 
     /**
      * 初始化数据

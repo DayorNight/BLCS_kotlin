@@ -3,16 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@+id/tb_title">
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="@dimen/margin18"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="@dimen/dp_4"
@@ -73,6 +75,7 @@
             android:textSize="@dimen/standard_title"
             android:theme="@style/Theme.BLCSkotin"/>
         <FrameLayout
+            android:id="@+id/fl_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin18"
@@ -109,5 +112,55 @@
             android:textColor="@color/purple_700"
             android:text="1/10"
             android:layout_gravity="right"/>
+
+        <LinearLayout
+            android:id="@+id/ll_style2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_resolve2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_radious_gray"
+                android:padding="@dimen/margin6"
+                android:textStyle="bold"
+                android:text="参考分析"/>
+            <TextView
+                android:id="@+id/tv_pre2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin18"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_radious_green"
+                android:padding="@dimen/margin6"
+                android:textStyle="bold"
+                android:text="上一题"/>
+            <TextView
+                android:id="@+id/tv_next2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/margin18"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_radious_green"
+                android:padding="@dimen/margin6"
+                android:textStyle="bold"
+                android:text="下一题"/>
+            <TextView
+                android:id="@+id/tv_page2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/standard_weak"
+                android:textColor="@color/purple_700"
+                android:text="1/10"
+                android:layout_gravity="right"/>
+        </LinearLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

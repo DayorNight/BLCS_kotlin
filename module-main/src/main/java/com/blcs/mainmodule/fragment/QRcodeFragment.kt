@@ -32,29 +32,29 @@ class QRcodeFragment : BaseFragment<FragmentQrCodeBinding>(), View.OnClickListen
     override fun setLayoutId() = R.layout.fragment_qr_code
 
     var bindView: FragmentQrCodeBinding? = null
-    override fun initUI(bindView: FragmentQrCodeBinding) {
-        this.bindView = bindView
-        bindView.btnCopy = View.GONE
+    override fun initUI(binding: FragmentQrCodeBinding) {
+        this.bindView = binding
+        binding.btnCopy = View.GONE
         //识别二维码/条形码
-        bindView.ivBarQr.setOnLongClickListener(View.OnLongClickListener {
-            val bitmap = (bindView.ivBarQr.drawable as BitmapDrawable).bitmap
+        binding.ivBarQr.setOnLongClickListener(View.OnLongClickListener {
+            val bitmap = (binding.ivBarQr.drawable as BitmapDrawable).bitmap
             val result = LinQrCode.decodeFromPhoto(bitmap)
-            bindView.scanContent = result?.text
+            binding.scanContent = result?.text
             false
         })
 
-        bindView.tvCode.addTextChangedListener { it ->
+        binding.tvCode.addTextChangedListener { it ->
             it?.apply {
-                bindView.btnCopy =if (length>0) View.VISIBLE else View.GONE
+                binding.btnCopy =if (length >0) View.VISIBLE else View.GONE
             }
         }
 
-        bindView.btnQrCode.setOnClickListener(this)
-        bindView.btnBarCode.setOnClickListener(this)
-        bindView.btnCustomQrCode.setOnClickListener(this)
-        bindView.btnScanCode.setOnClickListener(this)
-        bindView.tvCopy.setOnClickListener(this)
-        bindView.tvCode.setOnClickListener(this)
+        binding.btnQrCode.setOnClickListener(this)
+        binding.btnBarCode.setOnClickListener(this)
+        binding.btnCustomQrCode.setOnClickListener(this)
+        binding.btnScanCode.setOnClickListener(this)
+        binding.tvCopy.setOnClickListener(this)
+        binding.tvCode.setOnClickListener(this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

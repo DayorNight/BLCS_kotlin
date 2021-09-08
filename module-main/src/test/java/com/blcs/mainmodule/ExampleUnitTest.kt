@@ -12,6 +12,17 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val single = Single()
+        println(single.getName())
+        println(single.getAge())
+        single.change()
+        println(single.getName())
+        println(single.getAge())
+
+
+        val arrayOfs = arrayOf("1", "2", "3", "4")
+        for (item in arrayOfs){
+            println(item)
+        }
     }
 }

@@ -1,10 +1,8 @@
 package com.blcs.mainmodule.fragment
 
-import android.os.Bundle
 import com.blcs.comlibs.base.BaseFragment
 import com.blcs.mainmodule.R
 import com.blcs.mainmodule.databinding.FragmentCommonBinding
-import com.blcs.mainmodule.databinding.FragmentHomeBinding
 
 
 /**
@@ -22,11 +20,12 @@ class CommonFragment private constructor(): BaseFragment<FragmentCommonBinding>(
     override fun setLayoutId() = R.layout.fragment_common
 
 
-    override fun initUI(bindView: FragmentCommonBinding) {
-        bindView. location = "广场"
+    override fun initUI(binding: FragmentCommonBinding) {
+        binding.location = "广场"
     }
 
     override fun initData() {
+
     }
 
 }

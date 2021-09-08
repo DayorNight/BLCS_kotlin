@@ -29,21 +29,21 @@ class MeFragment :BaseFragment<FragmentMeBinding>() {
     override fun setLayoutId() = R.layout.fragment_me
     private var comDialog: LinCustomDialogFragment? = null
 
-    override fun initUI(bindView: FragmentMeBinding) {
-        bindView.apply {
-            collapsingToolbar.title = "登陆"
-            collapsingToolbar.setExpandedTitleColor(Color.WHITE)
-            collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE)
-            val appCompatActivity = activity as AppCompatActivity
-            appCompatActivity?.setSupportActionBar(bindView.toolbar)
-            fbButton.setOnClickListener {
+    override fun initUI(binding: FragmentMeBinding) {
+        binding.apply {
+            this.collapsingToolbar.title = "登陆"
+            this.collapsingToolbar.setExpandedTitleColor(Color.WHITE)
+            this.collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE)
+            val appCompatActivity = this@MeFragment.activity as AppCompatActivity
+            appCompatActivity?.setSupportActionBar(binding.toolbar)
+            this.fbButton.setOnClickListener {
                 Lg.e("======登陆=======")
             }
         }
         val array = resources.getStringArray(R.array.Other)
         val mAdapter = SimpleListAdapter(array.toMutableList(), Gravity.LEFT)
-        LinRecycler.init(activity, mAdapter, bindView.rvToDoList)
-        mAdapter.setOnItemClickListener { adapter, view, position ->
+        LinRecycler.init(activity, mAdapter, binding.rvToDoList)
+        mAdapter.setOnItemClickListener { adapter, _, position ->
             when(position){
                 0 -> toFragment(Const.Fragment_ANDROID)
                 else -> adapter.data[position]?.toast(activity)

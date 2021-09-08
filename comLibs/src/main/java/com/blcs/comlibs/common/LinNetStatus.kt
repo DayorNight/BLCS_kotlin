@@ -125,7 +125,6 @@ object LinNetStatus {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             return "WAP"
         }
-        TelephonyManager.NETWORK_TYPE_NR
         var type = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) telephonyManager.dataNetworkType else telephonyManager.networkType
         return when (type) {
             TelephonyManager.NETWORK_TYPE_GSM,

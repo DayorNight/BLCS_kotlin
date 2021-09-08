@@ -1,7 +1,6 @@
 package com.blcs.mainmodule.fragment
 
 import android.graphics.Rect
-import android.view.View
 import com.blcs.comlibs.base.BaseFragment
 import com.blcs.comlibs.common.*
 import com.blcs.mainmodule.R
@@ -18,7 +17,7 @@ class TurnTableFragment : BaseFragment<FragmentTurntableBinding>(){
 
     override fun setLayoutId() = R.layout.fragment_turntable
 
-    override fun initUI(bindView: FragmentTurntableBinding) {
+    override fun initUI(binding: FragmentTurntableBinding) {
 
 //        bindView.btnText.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
 //                Lg.e("---------left: $left top: $top right: $right bottom: $bottom")
@@ -34,9 +33,9 @@ class TurnTableFragment : BaseFragment<FragmentTurntableBinding>(){
 //                    Lg.e("===2====")
 //                }
 //            })
-        bindView.scroll.viewTreeObserver.addOnGlobalLayoutListener {
+        binding.scroll.viewTreeObserver.addOnGlobalLayoutListener {
                 val rect = Rect()
-                bindView.btnText.getLocalVisibleRect(rect)
+                binding.btnText.getLocalVisibleRect(rect)
                 Lg.e("········top: ${rect.top} bottom: ${rect.bottom} left: ${rect.left} right: ${rect.right}")
             }
 

@@ -8,6 +8,8 @@
         <item>Banner轮播图</item>
         <item>选择器Picker</item>
         <item>放大镜</item>
+        <item>Handler消息传递机制</item>
+        <item>WorkManager</item>
 
     </string-array>
     <!--View-->
